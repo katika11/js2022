@@ -29,5 +29,26 @@ console.log(bool1)
 let bool2 = false;
 console.log(bool2)
 
+let firstName = 'Skorobohata';
+let middleName = 'Kateryna';
+let lastName = 'Ivanivna';
+console.log(`${firstName} ${middleName} ${lastName}`)
+
+let a = 100;
+console.log(typeof a)
+let b = '100';
+console.log(typeof b)
+let c = true;
+console.log(typeof c)
+
+let one = prompt('firstname');
+console.log(one);
+
+let two = prompt('middlename');
+console.log(two);
+
+let three = prompt('age');
+console.log(+three);
+
 
 
