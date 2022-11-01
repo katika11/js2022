@@ -7,4 +7,5 @@ let two = prompt('middlename');
 console.log(two);
 
 let three = prompt('age');
-console.log(three);
+console.log(+three);
+
