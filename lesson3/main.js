@@ -91,3 +91,26 @@ else if (x===y) {
 let x = prompt() || 'default';
 console.log(x);
 
+let x = '';
+if (!!x === false) {
+    console.log('default');
+}
+else {
+    console.log('hello');
+}
+
+let x = '';
+if (!x !== false) {
+    console.log('default');
+}
+else {
+    console.log('hello');
+}
+
+let x = '';
+if (x) {
+    console.log('hello');
+}
+else {
+    console.log('default')
+}
