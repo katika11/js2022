@@ -70,20 +70,16 @@ switch (schedule) {
 //- Користувач вводить або має два числа. Потрібно знайти та вивести максимальне число з тих двох .
 // Також потрібно врахувати коли введені рівні числа.
 
-let x=7;
-let y=13;
-if (x>=7 && x<=13 && y>=7 && y<=13) {
-    if (x === y)
-    console.log('equal');
-}
-else if (x>y) {
+let x= +prompt('enter number');
+let y= +prompt('enter number');
+if (x>y) {
     console.log(x);
 }
 else if (y>x) {
     console.log(y);
 }
-else {
-    console.log('?????');
+else if (x===y) {
+    console.log('equal');
 }
 
 //- є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
