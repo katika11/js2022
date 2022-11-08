@@ -2,7 +2,7 @@
 // Перевірте  скрипт при a, що дорівнює 1, 0, -3
 
 let x = +prompt('enter x');
-if (x != 0) {
+if (x !== 0) {
     console.log('true');
 }
 else {
@@ -64,6 +64,9 @@ switch (schedule) {
         break;
     case 7:
         console.log('sunday');
+        break;
+    default:
+        console.log('?????');
         break;
 }
 
