@@ -103,18 +103,23 @@
 // someeMAIL@i.ua
 // some.email@gmail.com
 
-function isPossiblyValidEmail(txt) {
-    return txt.length > 5 && txt.indexOf('@')>0;
-}
+// let val = (str) => {
+//     if (!str.startsWith('@') && str.includes('@') && str.includes('.', str.indexOf('@') + 3)) {
+//         console.log('Valid');
+//     } else {
+//         console.log('Not valid');
+//     }
+// }
+//
+// val('someemail@gmail.com');
+// val('someeMAIL@gmail.com');
+// val('someeMAIL@i.ua');
+// val('some.email@gmail.com');
 
 
+//- є масив, відсортувати його в спадаючому порядку за кількістю елементів в полі modules
 
-
-
-// Примітка
-// Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
-
-//- є масивlet coursesArray = [
+// let coursesArray = [
 //     {
 //         title: 'JavaScript Complex',
 //         monthDuration: 5,
@@ -184,22 +189,30 @@ function isPossiblyValidEmail(txt) {
 //     }
 // ];
 //
-//
-// відсортувати його в спадаючому порядку за кількістю елементів в полі modules
-//
+// coursesArray.sort((a, b) => a.modules.length - b.modules.length);
+// console.log(coursesArray);
+
+
 // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
 //     let symb = "о", str = "Астрономия это наука о небесных объектах";
 // document.writeln(count(str, symb)) // 5
+
+// let str = "Астрономия это наука о небесных объектах";
+// let count = 0;
+// let symb = str.indexOf('о');
 //
+// while (symb !== -1) {
+//     count++;
+//     symb = str.indexOf('о', symb + 1);
+// }
+// console.log(count);
+
+
 // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
 //     let str = "Сила тяжести приложена к центру масс тела";
 // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
-//
-//
-// -стоврити масив книжок (назва, кількість сторінок, автори , жанри).
-// -знайти наібльшу книжку.
-// - знайти книжку/ки з найбільшою кількістю жанрів
-// - знайти книжку/ки з найдовшою назвою
-// - знайти книжку/ки які писали 2 автори
-// - знайти книжку/ки які писав 1 автор
-// - вісортувати книжки по кількості сторінок по зростанню
+
+// let str = "Сила тяжести приложена к центру масс тела";
+// let cutString = (str, n) => str.split(' ').splice(0, n).join(' ');
+// console.log(cutString(str, 5));
+
