@@ -188,7 +188,7 @@
 //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
 //     }
 // ];
-//
+
 // coursesArray.sort((a, b) => a.modules.length - b.modules.length);
 // console.log(coursesArray);
 
@@ -215,4 +215,120 @@
 // let str = "Сила тяжести приложена к центру масс тела";
 // let cutString = (str, n) => str.split(' ').splice(0, n).join(' ');
 // console.log(cutString(str, 5));
+
+
+
+
+// 1) Створити масив з 20 чисел та:
+// a) відсортувати його від меншого до більшого.
+// b) відсортувати його від більшого до меншого.
+// c) Відфілтрувати числа які є кратними 3.
+// d) Відфілтрувати числа які є більшими за 10.
+// e) Проітерувати його forEach та вивести кожеш елмент за допомогою document.write
+// f) За допомогою map збільшити кожен елемент в масиві в три рази.
+// g) Порахувати загальну суму всіх елментів у масиві (reduce)
+
+// let arr = [7,45,9,1,93,120,3,330,6,399,284,48,2,10,13,27,56,73,99,300];
+// arr.sort(function (a, b) {
+//     return (a - b);
+// });
+// console.log(arr);
+
+// let arr = [7,45,9,1,93,120,3,330,6,399,284,48,2,10,13,27,56,73,99,300];
+// arr.sort(function (a, b) {
+//     return (b - a);
+// });
+// console.log(arr);
+
+// let result = arr.filter(num => num > 10);
+// console.log(result);
+
+// arr.forEach(function (num) {
+//  document.write(num + ' ')
+// });
+
+// let result = arr.map(num => num * 3);
+// console.log(result);
+
+// let sum = arr.reduce((a,b) => a +b);
+// console.log(sum)
+
+
+
+// 2) Створити масив з 20 стрічок та:
+// a) Відсортувати його в алфавітному порядку
+// b) Відсортувати в зворотньому порядку
+// c) Отримати в новому масиві тільки ті слова, довжина яких більша за 4 букви (filter)
+// d) Змінити кожне слово в масиві додавши на початок 'Sam says *ваше слово*'
+
+// let arr = ['apple', 'peach', 'banana', 'cucumber', 'passion', 'fruit', 'watermelon', 'grapes', 'kiwi', 'tangerine',
+//  'pear', 'plum', 'cherry', 'raspberry', 'currant', 'blueberry', 'fig', 'date', 'persimmon', 'coconut', 'mango'];
+
+// let newArr = arr.sort();
+// console.log(newArr)
+
+// let newArr = arr.sort().reverse();
+// console.log(newArr)
+
+// let newArr = arr.filter(item => item.length >= 5);
+// console.log(newArr);
+
+// let newArray = arr.map(value => 'Sam says ' + value);
+// console.log(newArray);
+
+
+// 3) Все робити тільки за допомогою методів масивів!
+// Дано масив :
+// a) відсортувати його за  віком (зростання , а потім окремо спадання)
+// b) відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
+// c) пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор
+// (По якому принципу його створювати - ваше рішення),
+// та зберегти це в новий масив (первинний масив залишиться без змін)
+// d) відсортувати його за індентифікатором
+// e) Всі хто одружений мають попасти у новий масив та отрмати квартиру (reduce)
+
+ let users = [
+ {name: 'vasya', age: 31, isMarried: false},
+ {name: 'petya', age: 30, isMarried: true},
+ {name: 'kolya', age: 29, isMarried: true},
+ {name: 'olya', age: 28, isMarried: false},
+ {name: 'max', age: 30, isMarried: true},
+ {name: 'anya', age: 31, isMarried: false},
+ {name: 'oleg', age: 28, isMarried: false},
+ {name: 'andrey', age: 29, isMarried: true},
+ {name: 'masha', age: 30, isMarried: true},
+ {name: 'olya', age: 31, isMarried: false},
+ {name: 'max', age: 31, isMarried: true}
+];
+
+// users.sort((a, b) => a.age - b.age);
+// console.log(users);
+// users.sort((a, b) => b.age - a.age);
+// console.log(users);
+
+// users.sort ((a,b) => a.name.length - b.name.length);
+// console.log(users);
+// users.sort ((a,b) => b.name.length - a.name.length);
+// console.log(users);
+
+// let newArray = (users) => {
+//  return [...users].map(el => { el["id"] = "23"; return el; });
+// };
+// console.log(newArray(users))
+
+// let newArray = users.map((user, index) =>
+//     ({id: index + 1, name: user.name, age: user.age, isMarried: user.isMarried}));
+// console.log(newArray);
+
+// let newArray = users.reduce((accumulator, user) => {
+//  if(user.isMarried) {
+//   accumulator.newArray.push({...user, flat: true});
+//  }
+//  return accumulator;
+// }, {newArray: []});
+// console.log(newArray)
+
+
+
+
 
