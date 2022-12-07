@@ -122,45 +122,48 @@
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-// class Car {
-// constructor(model, manufacturer, year, maxSpeed, engine, pilot) {
-//     this.model = model;
-//     this.manufacturer = manufacturer;
-//     this.year = year;
-//     this.maxSpeed = maxSpeed;
-//     this.engine = engine;
-//
-//     this.drive = function () {
-//         return `їдемо зі швидкістю ${this.maxSpeed} на годину`
-//     };
-//     this.info = function () {
-//         return `model - ${this.model}, manufacturer - ${this.manufacturer}, year - ${this.year}, maxSpeed - ${this.maxSpeed}, engine - ${this.engine}`
-//     };
-//     this.increaseMaxSpeed = function (newSpeed) {
-//         this.maxSpeed = newSpeed;
-//     };
-//     this.changeYear = function (newValue){
-//         this.year = newValue;
-//     };
-//     this.addDriver = function (driver) {
-//         this.pilot = driver
-//     };
-// }
-// }
-// let car1 = new Car('tesla', 'usa', 2012, 300, 10000);
-// console.log(car1);
-// console.log(car1.drive());
-// console.log(car1.info());
-// car1.increaseMaxSpeed(400);
-// console.log(car1);
-// car1.changeYear(2013);
-// console.log(car1)
-// let driver = {
-//     name: 'vasya',
-//     age: 31
-// };
-// car1.addDriver(driver)
-// console.log(car1)
+
+class Car{
+    constructor(model,producer,year,maxSpeed,carEngine) {
+        this.model = model;
+        this.producer = producer;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.carEngine = carEngine;
+    }
+    engine () {
+        console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+    }
+
+    info () {
+        for (const carKey in this) {
+            if (typeof this[carKey] !== 'function'){
+                console.log(`${carKey} -- ${this[carKey]}`);
+            }
+        }
+    }
+
+    increaseMaxSpeed (newSpeed) {
+        this.maxSpeed += newSpeed;
+    }
+
+    changeYear (newValue) {
+        this.year = newValue;
+    }
+
+    addDriver (driver) {
+        this.driver = driver;
+    }
+}
+
+const car = new Car('Toyota','Japan','2000',200,3.4);
+console.log(car);
+car.engine();
+car.info();
+car.increaseMaxSpeed(50);
+car.changeYear(2020);
+car.addDriver({name: 'Vasya'});
+console.log(car);
 
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
@@ -188,7 +191,7 @@
 // let cinderella10 = new Cinderella('oksana', 30, 38);
 // array.push(cinderella1, cinderella2, cinderella3, cinderella4, cinderella5, cinderella6, cinderella7, cinderella8, cinderella9, cinderella10);
 // console.log(array);
-//
+
 // class Prince {
 //     constructor(name, age, sizePrinces) {
 //         this.name = name;
@@ -197,10 +200,13 @@
 //     }
 // };
 // let prince = new Prince('vasya', 27, 35);
-//  for(let i = 0; i < array.length; i++){
-//  if(i.size === this.sizePrinces){
-//      }
-//      console.log()
-//  }
+// let couple = (array, prince) => {
+//     for (const item of array) {
+//         if (item.size === prince.sizePrinces) {
+//             return `your Cinderella ${item.name}`
+//         }
+//     };
+// };
+// console.log(couple(array, prince))
 
 
