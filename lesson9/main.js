@@ -236,12 +236,76 @@
 
 // -----------
 //
-//     - Створити довільний елемент з id = text.  Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+//     - Створити довільний елемент з id = text.
+//     Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+// let div = document.createElement('div');
+// div.innerText = 'hello';
+// div.style.fontSize = '30px';
+// div.setAttribute('id', 'text');
 //
+// let button = document.createElement('button');
+// button.innerText = 'push';
+// document.body.append(div, button);
 //
-//     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+// button.onclick = () => {
+//     div.style.display = 'none'
+// }
+
+
+//     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію
+//     з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
+
+// let input = document.createElement('input');
+// let button = document.createElement('button');
+// button.innerText = 'Click';
 //
+// document.body.append(input, button);
 //
+// button.onclick = () => {
+//     input.oninput;
+//     if (input.value < 18) {
+//         alert('So young');
+//     } else if (input.value >= 18) {
+//         alert('Welcome');
+//     }
+// }
+
+
 // *** Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+
+// let inputOne = document.createElement('input');
+// let inputTwo = document.createElement('input');
+// let inputThree = document.createElement('input');
+//
+// let button = document.createElement('button');
+// button.innerText = 'Click';
+//
+// document.body.append(inputOne,inputTwo,inputThree,button);
+//
+// button.onclick = () => {
+//     let tr = inputOne.value;
+//     let td = inputTwo.value;
+//     let text = inputThree.value;
+//
+//     const generateTable = (raws,columns,word) => {
+//         let table = document.createElement('table');
+//         table.style.border = `2px solid black`;
+//         document.body.append(table);
+//
+//         for (let i = 0; i < raws; i++) {
+//             let raw = document.createElement('tr');
+//             table.append(raw);
+//
+//             for (let j = 0; j < columns; j++) {
+//                 let column = document.createElement('td');
+//                 column.innerText = `${word}`;
+//                 column.style.border = `2px solid red`;
+//                 raw.append(column);
+//             }
+//         }
+//     }
+//     generateTable(tr,td,text);
+// }
