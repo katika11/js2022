@@ -6,6 +6,7 @@
 
 
 let mainBlock = document.createElement('div');
+mainBlock.classList.add('mainBlock')
 document.body.append(mainBlock);
 
 fetch(`https://jsonplaceholder.typicode.com/users`)
@@ -13,11 +14,13 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
     .then(value => {
         for (const item of value) {
             let usersDiv = document.createElement('div');
+            usersDiv.classList.add('userDiv');
             usersDiv.innerText = `${item.id} ${item.name}`;
             mainBlock.append(usersDiv);
 
             let button = document.createElement('a');
             button.innerText = `Click`;
+            button.classList.add('button');
             usersDiv.append(button);
             button.href = `user-details.html?data=${item.id}`;
         }
@@ -30,7 +33,6 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
 // (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
 // 6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html,
 // котра має детальну інфу про поточний пост.
-
 
 
 // На странице post-details.html:

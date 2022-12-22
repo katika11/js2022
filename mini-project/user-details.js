@@ -1,12 +1,17 @@
 let url = new URL(location.href);
 let id = url.searchParams.get('data');
 
+let mainUserBlock = document.createElement('div');
+mainUserBlock.classList.add('mainBlock');
+document.body.append(mainUserBlock);
+
 fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     .then(value => value.json())
     .then(value => {
 
         for (const item in value) {
             let userDiv = document.createElement('div');
+            userDiv.classList.add('userDiv');
 
             if (typeof value[item] !== 'object') {
 
@@ -33,15 +38,19 @@ fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
                     userDiv.append(innerDiv);
                 }
             }
-            document.body.append(userDiv);
-
+            mainUserBlock.append(userDiv);
         }
     });
 
 
 let button = document.createElement("button");
 button.innerText = 'posts of current user'
-document.body.appendChild(button)
+button.classList.add('button');
+document.body.appendChild(button);
+
+let userPostDiv = document.createElement('div');
+userPostDiv.classList.add('userPostDiv');
+document.body.appendChild(userPostDiv);
 
 button.onclick = function () {
  fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
@@ -49,10 +58,12 @@ button.onclick = function () {
      .then(posts => {
          for (const post of posts) {
              let userPost = document.createElement('div');
+             userPost.classList.add('userPost');
              userPost.innerText = `${post.title}`
-             document.body.appendChild(userPost);
+             userPostDiv.appendChild(userPost);
 
              let a = document.createElement('a');
+             a.classList.add('ahref');
              a.href = `post-details.html?post=${JSON.stringify(post)}`;
              a.innerText = 'click';
              userPost.appendChild(a);

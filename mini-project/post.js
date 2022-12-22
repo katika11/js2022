@@ -10,15 +10,17 @@ let post = JSON.parse(postUser);
 
 
 let divPost  = document.createElement('div');
+divPost.classList.add('divPost');
 document.body.append(divPost);
 divPost.innerText = `userId: ${post.userId} 
 id: ${post.id} 
 title: ${post.title} 
-body: ${post.body}`;
+body: ${post.body}`
 
 
 
 let commentsDiv = document.createElement('div');
+commentsDiv.classList.add('commentsDiv');
 document.body.appendChild(commentsDiv);
 
 fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
@@ -26,10 +28,12 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}/comments`)
     .then(comments => {
         for (let comment of comments) {
             let commentDiv = document.createElement('div');
+            commentDiv.classList.add('commentDiv')
             commentsDiv.appendChild(commentDiv);
 
             for (let commentElement in comment) {
                 let block = document.createElement('div');
+                block.classList.add('block');
                 commentDiv.appendChild(block);
                 block.innerText = `${commentElement} ${comment[commentElement]}`
             }

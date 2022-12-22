@@ -1,0 +1,43 @@
+.mainBlock{
+    width: 90%;
+    background: yellow;
+    display: block;
+}
+
+.button{
+    width: 90%;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.userDiv{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.userPostDiv{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+
+}
+
+.userPost{
+    width: 20%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.ahref{
+
+    color: black;
+    border: 3px solid silver;
+}
